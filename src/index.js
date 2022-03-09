@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import BeenhereIcon from '@material-ui/icons/Beenhere';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline } from '@material-ui/core';
+import Home from './Home';
 
 ReactDOM.render(
   <React.StrictMode>
