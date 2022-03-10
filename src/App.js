@@ -1,8 +1,8 @@
 
-import './App.css';
-import AbcIcon from '@mui/icons-material/Abc';
+
 import {ThemeProvider,createMuiTheme,makeStyles} from '@material-ui/core/';
 import MenuIcon from '@mui/icons-material/Menu';
+import Home from './Home';
 
 const useStyles=makeStyles({
   root:{
@@ -25,12 +25,12 @@ main:'#3f51b5',
       },
       },
     });
-    const classes=useStyles();
+   const classes=useStyles();
   return (
     <ThemeProvider theme={theme}>
  <div  className={classes.root}>
- <MenuIcon/> 
-Fazer Login
+  
+<Home/>
  </div>
  
   </ThemeProvider>

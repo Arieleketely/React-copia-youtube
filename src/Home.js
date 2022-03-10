@@ -24,49 +24,37 @@ const useStyles=makeStyles((theme) => ({
 appBar:{
 boxShadow:'none',
 },
-
-
-
-
-
-
-
-
+menuLetra:{
+  color:'red',
+  height:'10px',
+}
  
 }));
 
 function Home() {
     const classes=useStyles();
  return (
-    <div className={classes.root}>
 
 
-
-
-
-
-
-      <AppBar color='inherit' class={classes.appBar}>
+ 
+<div className={classes.root}>
    
-        <Toolbar color='inherit'>
+<AppBar color='inherit' class={classes.appBar}>
+        <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-      
-        
-       
-   
-          <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Photos
+          <Typography class={classes.menuLetra} variant="h6" color="inherit" className={classes.grow}>
+            News
           </Typography>
-        </Toolbar>
-       
-       
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
+
   );
 }
 
+ 
 export default Home;
+ 
