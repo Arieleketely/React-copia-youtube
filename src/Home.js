@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import AppsIcon from '@mui/icons-material/Apps';
 import { NoEncryption } from '@material-ui/icons';
 
 
@@ -18,17 +22,30 @@ const useStyles=makeStyles((theme) => ({
   root:{
   
 
-    height:'50px',
+    height:'80px',
     
 },
 appBar:{
 boxShadow:'none',
 },
 menuLetra:{
-  color:'red',
+  
   height:'10px',
-}
- 
+},
+ grow:{
+ position:'absolute',
+ right:'10px',
+ color:'blue',
+ },
+button:{
+  color:'blue',
+  borderColor:'blue',
+},
+icons:{
+paddingRight:theme.spacing(5),
+},
+
+
 }));
 
 function Home() {
@@ -44,10 +61,16 @@ function Home() {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography class={classes.menuLetra} variant="h6" color="inherit" className={classes.grow}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+<div className={classes.grow}>
+<Button  startIcon={<VideoCallIcon/>}></Button>
+<Button  startIcon={<AppsIcon/>}></Button>
+<Button  startIcon={<MoreVertIcon/>}></Button>
+<Button  startIcon={<AccountCircleIcon/>}variant="outlined" color="primary" className={classes.button}>
+
+Fazer Login
+</Button>
+  </div>     
+      
         </Toolbar>
       </AppBar>
     </div>
