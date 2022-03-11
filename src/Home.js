@@ -10,6 +10,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AppsIcon from '@mui/icons-material/Apps';
+import Logo from './imagens/preto.png';
+
 import { NoEncryption } from '@material-ui/icons';
 
 
@@ -44,7 +46,9 @@ button:{
 icons:{
 paddingRight:theme.spacing(5),
 },
-
+logo:{
+height:25,
+},
 
 }));
 
@@ -61,6 +65,10 @@ function Home() {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
+          <div>
+          <img src={Logo} alt='logo' className={classes.logo}/>
+           
+          </div>
 <div className={classes.grow}>
 <Button  startIcon={<VideoCallIcon/>}></Button>
 <Button  startIcon={<AppsIcon/>}></Button>
