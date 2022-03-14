@@ -4,7 +4,7 @@ import {makeStyles,AppBar} from '@material-ui/core/';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ListSubheader from '@material-ui/core/Typography';
-
+import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,6 +14,7 @@ import VideoCallIcon from '@mui/icons-material/VideoCall';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import AppsIcon from '@mui/icons-material/Apps';
 import Logo from './imagens/preto.png';
+import Imagem1 from './imagens/thumb1.png';
 import HomeIcon from '@material-ui/icons/Home';
 import Subscriptions from '@material-ui/icons/Subscriptions';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -102,9 +103,96 @@ const useStyles=makeStyles((theme) => ({
   subheader: {
     textTransform: 'uppercase',
   },
+  logoVideos:{
+    width:'6cm',
+    height:'4cm',
+  },
 
 
 }));
+
+const videos = [
+  {
+    id: 1,
+    title:
+      'FEED DO USUÁRIO | Criando uma Rede Social com React.js e .NET Core #29',
+    channel: 'Lucas Nhimi',
+    views: '11 mi de visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb1.png',
+    
+  },
+  {
+    id: 2,
+    title:
+      'COMO MELHORAR SEU CODIGO JAVASCRIPT (ESLINT + PRETTIER + EDITORCONFIG) | Dicas e Truques #02',
+    channel: 'Lucas Nhimi',
+    views: '957 mil visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb2.png',
+  },
+  {
+    id: 3,
+    title:
+      'CONTEXT API NO EDITOR DE POST | Criando uma Rede Social com React.js e .NET Core #27',
+    channel: 'Lucas Nhimi',
+    views: '106 mil visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb3.png',
+  },
+  {
+    id: 4,
+    title:
+      'CONTEXT API NO EDITOR DE POST | Criando uma Rede Social com React.js e .NET Core #27',
+    channel: 'Lucas Nhimi',
+    views: '5,6 mi de visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb4.png',
+  },
+  {
+    id: 5,
+    title:
+      'EDITOR DE POST COM MARKDOWN 2 | Criando uma Rede Social com React.js e .NET Core #26',
+    channel: 'Lucas Nhimi',
+    views: '2,2 mi de visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb5.png',
+  },
+  {
+    id: 6,
+    title: 'COMO MIGRAR PARA REACT HOOKS | Dicas e Truques #01',
+    channel: 'Lucas Nhimi',
+    views: '233 mil visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens/thumb6.png',
+  },
+  {
+    id: 7,
+    title:
+      'PRÉ-REQUISITOS | Criando uma Rede Social com React.js e .NET Core #01',
+    channel: 'Lucas Nhimi',
+    views: '118 mil visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/imagens//images/thumb7.png',
+  },
+  {
+    id: 8,
+    title:
+      'GIT E GITHUB | Criando uma Rede Social com React.js e .NET Core #04',
+    channel: 'Lucas Nhimi',
+    views: '1,9 mi de visualizações',
+    date: 'há 1 semana',
+    avatar: '/imagens/avatar.jpeg',
+    thumb: '/ima/thumb8.png',
+  },
+];
 
 function Home() {
     const classes=useStyles();
@@ -354,21 +442,45 @@ Fazer Login
             style={{ fontWeight: 600 }}
           >
             Recomendados
-          </Typography>
-          </Box>
-          </Box>
-          
-
- 
- 
- 
- 
- 
+  </Typography>
+  <Grid container spacing={4}>
+            {videos.map((item, index) => (
+              <Grid item lg={3} md={4} sm={6} xs={12}>
+                <Box>
+             
+                  <img className={classes.logoVideos}
+                    style={{ width: '100%' }}
+                    alt={item.title}
+                    src={Imagem1}
+                  />
+                  <Box>
+                    <Typography
+                      style={{ fontWeight: 600 }}
+                      gutterBottom
+                      variant='body1'
+                      color='textPrimary'
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      display='block'
+                      variant='body2'
+                      color='textSecondary'
+                    >
+                      {item.channel}
+                    </Typography>
+                    <Typography variant='body2' color='textSecondary'>
+                      {`${item.views} • ${item.date}`}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Box>
     </div>
-
   );
 }
-
- 
 export default Home;
  
